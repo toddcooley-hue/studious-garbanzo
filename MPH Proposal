@@ -1,0 +1,138 @@
+---
+title: "Program Viability Report: Master's in Public Health at Muhlenberg College"
+author: "Todd Cooley"
+date: "2025-11-04"
+format:
+  pdf:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    df-print: paged
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Introduction
+
+A regional liberal arts institution in the Northeast United State is exploring the launch of a **Master of Public Health (MPH)** program. This fully online, synchronous program is designed to serve a diverse set of learners, including current undergraduates (via a 4+1 pathway), recent graduates, and mid-career professionals. This report assesses the viability of such a program across multiple dimensions including labor market demand, competitive landscape, internal feasibility, and audience value propositions.
+
+Note: All institutional data in this report is simulated for illustrative purposes.
+
+# 1. Regional Labor Market Demand
+
+## National Trends
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+
+mph_jobs <- tibble(
+  Role = c("Epidemiologists", "Health Educators", "Community Health Workers", "All Healthcare Jobs", "National Avg"),
+  GrowthRate = c(19, 11, 12, 13, 5)  # 5% as average national job growth baseline
+)
+
+mph_jobs <- mph_jobs %>%
+  mutate(Highlight = ifelse(Role == "National Avg", "Baseline", "Projected"))
+
+ggplot(mph_jobs, aes(x = reorder(Role, GrowthRate), y = GrowthRate, fill = Highlight)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_manual(values = c("Projected" = "#E69F00", "Baseline" = "#56B4E9")) +
+  labs(title = "Projected Job Growth for MPH-Related Roles vs. National Average (2023–2033)",
+       x = "Job Role",
+       y = "Growth Rate (%)",
+       fill = "Legend") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+- Healthcare roles are projected to grow significantly, especially in epidemiology and public health education.
+- Pennsylvania’s aging population and growing healthcare industry in the region further enhance regional demand.
+
+## Local Demand: Lehigh Valley
+
+- Regional Health Networks collectively employ over 33,000 workers.
+- Regional job growth forecast (2020–2025) exceeds PA average.
+- Public and nonprofit sectors show rising demand for health communication, policy, and data roles.
+
+# 2. Competitor Program Analysis
+
+| Institution              | Delivery     | Total Credits | Tuition (Estimated) | Notes                             |
+|--------------------------|--------------|----------------|----------------------|-----------------------------------|
+| Muhlenberg College       | Online Sync  | 10 Courses     | $35,000              | New proposed format               |
+| Competitor A             | Online       | ~42            | ~$32,000             | Fully online, launched 2024       |
+| Competitor B             | In-Person    | 42             | ~$69,720             | CEPH-accredited, more expensive   |
+
+Muhlenberg offers a **middle-tier pricing structure** with flexibility and liberal arts integration that fills a market niche.
+
+# 3. Internal Feasibility
+
+- No new full-time faculty required.
+- Online infrastructure proven via MBA and MAA programs.
+- CEPH accreditation targeted for 2027–28.
+- Strong liberal arts framework supports public health’s interdisciplinary demands.
+
+# 4. Target Market Segments
+
+## 4.1 Current Undergraduates (4+1 Pathway)
+
+- Can take 1–4 MPH courses in senior year.
+- Complete MPH with 1 extra year of study.
+- Builds on strong UG public health major.
+
+## 4.2 Recent Graduates
+
+- Enhance early career trajectories.
+- Gain credentials for program manager, analyst, or educator roles.
+- Flexible online delivery supports part-time study.
+
+## 4.3 Mid-Career Professionals
+
+- Career switchers or those seeking advancement.
+- Apply directly to roles in community health, data, hospital management.
+- Online synchronous model allows work-life balance.
+
+# 5. Value Propositions
+
+| Audience              | Value Highlights                                                                 |
+|-----------------------|----------------------------------------------------------------------------------|
+| Undergraduates        | Accelerated 4+1 track, faculty continuity, local internship pipeline              |
+| Recent Graduates      | Specialized skills, career differentiation, flexible format                      |
+| Mid-Career Professionals | Promotion potential, sector switch options, balance work with study         |
+
+## Earnings Advantage of an MPH
+
+```{r}
+earnings <- tibble(
+  Education = c("Bachelor's Degree", "MPH Degree"),
+  MedianSalary = c(55000, 79000)
+)
+
+ggplot(earnings, aes(x = Education, y = MedianSalary, fill = Education)) +
+  geom_col(width = 0.5) +
+  scale_fill_manual(values = c("Bachelor's Degree" = "#56B4E9", "MPH Degree" = "#E69F00")) +
+  labs(title = "Median Salary Comparison: Bachelor's vs. MPH Degree",
+       y = "Median Salary (USD)",
+       x = NULL) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+- Individuals with an MPH earn approximately **$24,000 more** annually on average compared to those with only a bachelor’s degree.
+- The return on investment makes the $35,000 tuition cost for the MPH program competitive and compelling.
+
+# 6. Conclusion
+
+The proposed MPH program is **highly viable**, given:
+
+- Strong job growth in healthcare and public health roles
+- Local demand from Lehigh Valley employers
+- Competitive differentiation via liberal arts and synchronous online delivery
+- Appealing value propositions for multiple learner segments
+
+With strategic recruitment and CEPH accreditation, Muhlenberg is well-positioned to succeed in launching this new program.
