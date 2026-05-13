@@ -1,5 +1,5 @@
 ---
-title: "Program Viability Report: Master's in Public Health at Muhlenberg College"
+title: 
 author: "Todd Cooley"
 date: "2025-11-04"
 format:
@@ -64,11 +64,11 @@ ggplot(mph_jobs, aes(x = reorder(Role, GrowthRate), y = GrowthRate, fill = Highl
 
 | Institution              | Delivery     | Total Credits | Tuition (Estimated) | Notes                             |
 |--------------------------|--------------|----------------|----------------------|-----------------------------------|
-| Muhlenberg College       | Online Sync  | 10 Courses     | $35,000              | New proposed format               |
+| regional liberal arts insitutions College       | Online Sync  | 10 Courses     | $35,000              | New proposed format               |
 | Competitor A             | Online       | ~42            | ~$32,000             | Fully online, launched 2024       |
 | Competitor B             | In-Person    | 42             | ~$69,720             | CEPH-accredited, more expensive   |
 
-Muhlenberg offers a **middle-tier pricing structure** with flexibility and liberal arts integration that fills a market niche.
+regional liberal arts insitutions offers a **middle-tier pricing structure** with flexibility and liberal arts integration that fills a market niche.
 
 # 3. Internal Feasibility
 
@@ -135,4 +135,4 @@ The proposed MPH program is **highly viable**, given:
 - Competitive differentiation via liberal arts and synchronous online delivery
 - Appealing value propositions for multiple learner segments
 
-With strategic recruitment and CEPH accreditation, Muhlenberg is well-positioned to succeed in launching this new program.
+With strategic recruitment and CEPH accreditation, regional liberal arts insitution is well-positioned to succeed in launching this new program.
